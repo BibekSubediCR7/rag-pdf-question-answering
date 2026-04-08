@@ -103,5 +103,3 @@ Pipeline:
 - "Give code examples for loops"  
 
 ---
-
-## Project Structure
