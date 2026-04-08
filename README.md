@@ -4,16 +4,16 @@
 
 This project implements an end-to-end Retrieval-Augmented Generation (RAG) pipeline that allows users to query a PDF document using natural language.
 
-The system processes a PDF, converts its content into embeddings, stores them in a FAISS vector database, retrieves relevant information, and generates context-aware answers using an OpenAI language model.
+The system is built using a **Python Handbook (~100 pages)** as the source document. It processes the PDF, converts its content into embeddings, stores them in a FAISS vector database, retrieves relevant information, and generates context-aware answers using an OpenAI language model.
 
 ---
 
 ## Problem
 
 Large Language Models (LLMs):
-- do not have access to private documents  
+- do not have access to private or custom documents  
 - may generate incorrect or hallucinated answers  
-- cannot efficiently process large documents  
+- cannot efficiently process large documents (e.g., 100-page PDFs)  
 
 ---
 
@@ -23,7 +23,7 @@ This project combines retrieval with generation to solve these issues.
 
 Pipeline:
 
-1. Load PDF using PyPDFLoader  
+1. Load Python Handbook PDF (~100 pages)  
 2. Split text into chunks (size: 500, overlap: 50)  
 3. Convert chunks into embeddings  
 4. Store embeddings in FAISS vector database  
@@ -36,7 +36,7 @@ Pipeline:
 ## Architecture
 
 ### Document Processing
-- PDF loading  
+- PDF loading (Python handbook)  
 - Text extraction  
 - Chunking (RecursiveCharacterTextSplitter)  
 - Embedding generation  
@@ -55,7 +55,7 @@ Pipeline:
 - Python  
 - LangChain  
 - OpenAI API  
-- FAISS  
+- FAISS (vector database)  
 - PyPDFLoader  
 
 ---
@@ -87,32 +87,21 @@ Pipeline:
 
 ## Features
 
-- Chat with PDF using natural language  
+- Chat with a 100-page Python handbook PDF  
 - Semantic search using embeddings  
 - Context-aware responses  
 - Interactive CLI chat loop  
-- Displays structured answers  
+- Structured answers (clean formatting)  
 
 ---
 
 ## Example Queries
 
-- Summarize the document  
-- Explain key concepts  
-- Extract specific information  
-- Provide code examples from content  
+- "Summarize Python basics from the document"  
+- "Explain tuples in Python with examples"  
+- "List Python data types"  
+- "Give code examples for loops"  
 
 ---
 
-## Interactive Mode
-
-- Continuous user input loop  
-- Exit commands: `exit`, `quit`, `q`  
-- Input validation for empty queries  
-
----
-
-## Installation
-
-```bash
-pip install langchain-openai langchain-community langchain-text-splitters faiss-cpu pypdf
+## Project Structure
